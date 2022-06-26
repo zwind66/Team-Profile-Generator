@@ -1,6 +1,4 @@
-module.exports = teamArry => {
-           
-return `
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,41 +24,42 @@ return `
     <div class="container">
         <div class="row">
             <div class="row team-area col-12 d-flex justify-content-center">
-              ${teamArry.map(({ name, jobTitle, id, email, office, github, school}) => {
-                if (!office) {
-                    office = '';
-                } else
-                    office = `<li class="list-group-item">Office number: ${office}</li>`;
-                if (!github) {
-                    github = '';
-                } else
-                    github = `<li class="list-group-item">Github: <a href="https://github.com/${github}" target="_blank" rel="noopener noreferrer">${github}</a></li>`;
-                if (!school) {
-                    school = '';
-                } else
-                    school = `<li class="list-group-item">School: ${school}</li>`;
-                return `
+              
                 <div class="card employee-card shadow m-2 ">
                     <div class="card-header bg-primary text-light">
-                        <h2 class="card-title">${name}</h2>
-                        <h3 class=""card-subtitle"><i class="fas fa-mug-hot mr-2"></i>${jobTitle}</h3>
+                        <h2 class="card-title">shuai</h2>
+                        <h3 class=""card-subtitle"><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${id}</li>
-                            <li class="list-group-item">Emial: <a href="mailto:${email}">${email}</a></li>
-                            ${office}
-                            ${github}
-                            ${school}
+                            <li class="list-group-item">ID: 1</li>
+                            <li class="list-group-item">Emial: <a href="mailto:szuo1@vols.utk.edu">szuo1@vols.utk.edu</a></li>
+                            <li class="list-group-item">Office number: 666</li>
+                            
+                            
                         </ul>
                     </div>
                 </div>
-                `;
-                }).join('')}
+                
+                <div class="card employee-card shadow m-2 ">
+                    <div class="card-header bg-primary text-light">
+                        <h2 class="card-title">annie</h2>
+                        <h3 class=""card-subtitle"><i class="fas fa-mug-hot mr-2"></i>Intern</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: 2</li>
+                            <li class="list-group-item">Emial: <a href="mailto:rock@vols.utk.edu">rock@vols.utk.edu</a></li>
+                            
+                            
+                            <li class="list-group-item">School: UTK</li>
+                        </ul>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
 </body>
 </html>
-    `;
-};
+    

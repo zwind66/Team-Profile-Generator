@@ -3,11 +3,11 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generate = require('./utils/generate.js');
 
+teamArry = [];
 
-const promptUser = employee => {
-    if (!employee) {
-        employee = [];
-    }
+// function to prompt user for input
+const promptUser = data => {
+
     return inquirer.prompt([
         {
             type: "input",
@@ -78,12 +78,12 @@ const promptUser = employee => {
             message: "Would you like to add another employee?",
             default: true
         }
-    ]).then(answers => {
-        employee.push(answers);
-        if (answers.confirmAdd) {
+    ]).then(data => {
+        teamArry.push(data);
+        if (data.confirmAdd) {
             return promptUser();
         } else {
-            return employee;
+            return teamArry; // return the array of user input
         }
     });
 };
@@ -107,9 +107,10 @@ const writeFile = fileContent => {
     });
 };
 
+// function to generate the HTML file 
 promptUser()
-    .then(employee => {
-        return generate.generateHTML(employee);
+    .then(teamArry => {
+        return generate(teamArry);
     })
     .then(fileContent => {
         return writeFile(fileContent);
