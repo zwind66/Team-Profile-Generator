@@ -8,7 +8,7 @@ The goal of this project is to build a Node.js command line application. It gene
 
 ![Img for the application](/src/2022-06-26%20204341.png)
 
-And here is link to the video : [Screencastify]([https://drive.google.com/file/d/1lbRQ2-nIYJkuhYiKH4a7HdTMoTNbjwGp/view](https://drive.google.com/file/d/1lbRQ2-nIYJkuhYiKH4a7HdTMoTNbjwGp/view?usp=sharing))
+And here is link to the video : [Screencastify](https://drive.google.com/file/d/1lbRQ2-nIYJkuhYiKH4a7HdTMoTNbjwGp/view?usp=sharing)
 
 ## Table of Contents
 
