@@ -1,12 +1,42 @@
-const Employee = require('../lib/Employee'); // import the Employee class
+ // import the Employee class
+ const Employee = require('../lib/Employee');
 
+// test the Employee class
 test('creates a employee object', () => {
-  const employee = new Employee('John', '1', 'test@test.com', 'employee'); // create a new employee object
+  const employee = new Employee(); 
 
-    expect(employee.name).toBe('John'); // expect the name property to be 'John'
-    expect(employee.id).toBe('1');  // expect the id property to be '1'
-    expect(employee.email).toBe('test@test.com');   // expect the email property to be 'test@test.com'
-    expect(employee.jobTitle).toBe('employee'); // expect the jobTitle property to be 'employee'
-}); // end of test
+  expect(typeof employee).toBe('object');
+});
+
+// test getName()
+test(' gets the name of the employee', () => {
+  const employee = new Employee('John', 1, 'John@test.com');
+
+  expect(employee.getName()).toBe('John');
+});
+
+  // test getId()
+test(' gets the id of the employee', () => {
+  const employee = new Employee('John', 1, 'John@test.com');
+
+  expect(employee.getId()).toBe(1);
+});
+
+  // test getEmail()
+test(' gets the email of the employee', () => {
+  const employee = new Employee('John', 1, 'John@test.com');
+
+  expect(employee.getEmail()).toBe('John@test.com');
+});
+
+  // test getRole()
+test(' gets the role of the employee', () => {
+  const employee = new Employee('John', 1, 'John@test.com');
+
+  expect(employee.getRole()).toBe('Employee');
+});
+
+
+
 
 

@@ -1,11 +1,24 @@
-const Engineer = require('../lib/Engineer'); // import the Engineer class
+// import the Engineer class
+const Engineer = require('../lib/Engineer');
 
+// test the Engineer class
 test('creates a engineer object', () => {
-    const engineer = new Engineer('John', '1', 'test@test.com', 'engineer', 'github'); // create a new engineer object
+    const engineer = new Engineer();
 
-    expect(engineer.name).toBe('John'); // expect the name property to be 'John'
-    expect(engineer.id).toBe('1'); // expect the id property to be '1'
-    expect(engineer.email).toBe('test@test.com'); // expect the email property to be 'test@test.com'
-    expect(engineer.jobTitle).toBe('engineer'); // expect the jobTitle property to be 'engineer'
-    expect(engineer.github).toBe('github'); // expect the github property to be 'github'
-}); // end of test
+    expect(typeof engineer).toBe('object');
+});
+
+// test getGithub()
+test(' gets the github of the engineer', () => {
+    const engineer = new Engineer('John', 1, 'John@test.com', 'testgithub');
+
+    expect(engineer.getGithub()).toBe('testgithub');
+});
+
+// test getRole()
+test(' gets the role of the engineer', () => {
+    const engineer = new Engineer('John', 1, 'John@test.com', 'testrole');
+
+    expect(engineer.getRole()).toBe('Engineer');
+});
+

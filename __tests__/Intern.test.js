@@ -1,11 +1,24 @@
-const Intern = require('../lib/Intern'); // <-- this is the file we're testing
+// import the Intern Class
+const Intern = require('../lib/Intern'); 
 
+// test the Intern class
 test ('creates a intern object', () => {
-    const intern = new Intern('John', '1', 'test@test.com', 'intern', 'school');    // create a new intern object
+    const intern = new Intern();
 
-    expect(intern.name).toBe('John'); // expect the name property to be 'John'
-    expect(intern.id).toBe('1'); // expect the id property to be '1'
-    expect(intern.email).toBe('test@test.com'); // expect the email property to be '
-    expect(intern.jobTitle).toBe('intern'); // expect the jobTitle property to be 'intern'
-    expect(intern.school).toBe('school'); // expect the school property to be 'school'
-}); // end of test
+    expect(typeof intern).toBe('object');
+});
+
+// test getSchool()
+test (' gets the school of the intern', () => {
+    const intern = new Intern('John', 1, 'John@test.com', 'testschool');
+
+    expect(intern.getSchool()).toBe('testschool');
+});
+
+// test getRole()
+test (' gets the role of the intern', () => {
+    const intern = new Intern('John', 1, 'John@test.com', 'testschool');
+
+    expect(intern.getRole()).toBe('Intern');
+});
+
